@@ -62,9 +62,7 @@
 
 .size__guide .sizeguide-modal__content-mobile .sizeguide-modal__title,
 .size__guide .sizeguide-modal__content-mobile .sizeguide-modal__toggle-markup,
-.size__guide
-  .sizeguide-modal__content-mobile
-  .sizeguide-modal__singleline-copy {
+.size__guide .sizeguide-modal__content-mobile {
   display: block;
 }
 
@@ -78,20 +76,11 @@
   margin: 0 0 5px;
 }
 
-.size__guide
-  .sizeguide-modal__content-mobile
-  .sizeguide-modal__singleline-copy {
+.size__guide .sizeguide-modal__content-mobile {
   margin: 0 0 10px;
 }
 
-.size__guide .sizeguide-modal__singleline-copy {
-  font-size: 12px;
-  margin: 0 0 30px;
-  color: #333;
-}
-
 .size__guide .sizeguide-modal__toggle-markup {
-  display: none;
   margin: 10px 0 5px;
   text-align: right;
 }
@@ -109,6 +98,14 @@
 .size__guide
   .sizeguide-modal[data-state="cm"]
   .sizeguide-modal__toggle-text.--cm {
+  color: #333;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.size__guide
+  .sizeguide-modal[data-state="in"]
+  .sizeguide-modal__toggle-text.--in {
   color: #333;
   font-weight: 700;
   pointer-events: none;
@@ -195,15 +192,11 @@
   margin: 0 0 5px;
 }
 
-.size__guide .sizeguide-modal__singleline-copy {
-  font-size: 12px;
-  margin: 0 0 30px;
-}
-
 .size__guide .sizeguide-modal__content-part-left p {
   margin: 0 0 5px;
   color: #333;
   line-height: 12px;
+  margin-bottom: 20px;
 }
 
 .size__guide .sizeguide-modal__content-part-left h6 {
@@ -214,11 +207,6 @@
   color: #000;
 }
 
-.size__guide .sizeguide-modal .spacing {
-  height: 15px;
-  display: block !important;
-}
-
 .size__guide .sizeguide-modal__content-image {
   align-items: center;
   display: flex;
@@ -227,6 +215,7 @@
 
 .size__guide .sizeguide-modal__content-image img {
   max-height: 350px;
+  width: auto;
 }
 
 .size__guide .sizeguide-modal__table-wrapper {
@@ -265,6 +254,19 @@
 
 .size__guide .sizeguide-modal__table-wrapper tr:first-child td {
   font-weight: 700;
+}
+
+.sizeguide-modal .c-cm-value,
+.sizeguide-modal .c-in-value {
+  display: none;
+}
+
+.sizeguide-modal[data-state="cm"] .c-cm-value {
+  display: block !important;
+}
+
+.sizeguide-modal[data-state="in"] .c-in-value {
+  display: block !important;
 }
 
 @media screen and (min-width: 768px) {

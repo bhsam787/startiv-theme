@@ -2032,6 +2032,10 @@
             "size_chart_mapping": {
               "label": "Size chart mapping",
               "info": "Map product variants to specific size charts."
+            },
+            "size_chart_modal_title": {
+              "label": "Size chart modal title",
+              "info": "Title for the size chart modal."
             }
 
           }
