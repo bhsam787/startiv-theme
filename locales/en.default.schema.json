@@ -1986,6 +1986,13 @@
         "quantity_selector": {
           "name": "Quantity selector"
         },
+        "badge": {
+          "name": "Badge",
+          "settings": {
+            "label": "Badge Mapping",
+            "info": "Map product tags to custom badges. Enter each tag and badge label as tag:label, separated by commas. Example: limited-edition:🌟 Limited Edition!, bestseller:🛒 Best Seller!. Matching is case-insensitive."
+          },
+        },
         "variant_picker": {
           "name": "Variant picker",
           "settings": {
@@ -2013,6 +2020,10 @@
             },
             "size_chart_settings": {
               "header": "Size chart",
+            },
+            "size_chart_label": {
+              "label": "Label",
+              "info": "Label for the size chart link in the variant picker.",
             },
             "enable_size_chart": {
               "label": "Enable size chart",
@@ -2215,27 +2226,6 @@
                 "label": "Truck"
               },
               "options__44": {
-                "label": "Washing"
-              }
-            }
-          }
-        },
-        "accordion": {
-          "name": "Accordion",
-          "settings": {
-            "heading": {
-              "label": "Heading",
-              "default": "Collapsible row"
-            },
-            "content": {
-              "label": "Content"
-            },
-            "icon": {
-              "label": "Icon",
-              "options__1": {
-                "label": "Box"
-              },
-              "options__2": {
                 "label": "Washing"
               }
             }

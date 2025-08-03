@@ -227,6 +227,8 @@
                     </div>
                   </details>
                 </div>
+              {%- when 'badge' -%}
+                {%- render 'product-badge', product: product, block: block -%}
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -864,6 +866,19 @@
       "limit": 1
     },
     {
+      "type": "badge",
+      "name": "t:sections.main-product.blocks.badge.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "badge_mapping",
+          "label": "t:sections.main-product.blocks.badge.settings.label",
+          "info": "t:sections.main-product.blocks.badge.settings.info"
+        }
+      ]
+    },
+    {
       "type": "variant_picker",
       "name": "t:sections.main-product.blocks.variant_picker.name",
       "limit": 1,
@@ -906,7 +921,7 @@
           "default": "circle"
         },
         {
-          "type":"header",
+          "type": "header",
           "content": "t:sections.main-product.blocks.variant_picker.settings.size_chart_settings.header"
         },
         {
@@ -915,6 +930,13 @@
           "default": true,
           "label": "t:sections.main-product.blocks.variant_picker.settings.enable_size_chart.label",
           "info": "t:sections.main-product.blocks.variant_picker.settings.enable_size_chart.info"
+        },
+        {
+          "type": "text",
+          "id": "size_chart_label",
+          "default": "Find My Size",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.size_chart_label.label",
+          "info": "t:sections.main-product.blocks.variant_picker.settings.size_chart_label.info"
         },
         {
           "type": "text",
@@ -1179,39 +1201,6 @@
           "type": "page",
           "id": "page",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
-        }
-      ]
-    },
-    {
-      "type": "accordion",
-      "name": "t:sections.main-product.blocks.accordion.name",
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "default": "t:sections.main-product.blocks.accordion.settings.heading.default",
-          "label": "t:sections.main-product.blocks.accordion.settings.heading.label"
-        },
-        {
-          "type": "select",
-          "id": "icon",
-          "options": [
-            {
-              "value": "box",
-              "label": "t:sections.main-product.blocks.accordion.settings.icon.options__1.label"
-            },
-            {
-              "value": "washing",
-              "label": "t:sections.main-product.blocks.accordion.settings.icon.options__2.label"
-            }
-          ],
-          "default": "box",
-          "label": "t:sections.main-product.blocks.accordion.settings.icon.label"
-        },
-        {
-          "type": "richtext",
-          "id": "content",
-          "label": "t:sections.main-product.blocks.collapsible_tab.settings.content.label"
         }
       ]
     },

@@ -1,0 +1,29 @@
+{%- comment -%}
+  Product Badge Snippet Instructions
+
+  Parameters:
+      - product: {Object} The product object to which the badge is associated.
+      - block: {Object} The block information for the badge.
+
+  Example usage:
+      {% render 'product-badge', product: product, block: block %}
+
+  All parameters are optional. Default styles will be applied if not provided.
+{%- endcomment -%}
+
+{% liquid
+  assign product_tags = product.tags | join: ', ' | downcase
+  assign badge_badge_array = block.settings.badge_mapping | split: ','
+%}
+
+<div class="product-badges">
+  {% for badge in badge_badge_array %}
+    {% assign badge_downcase = badge | downcase %}
+    {% assign badge_text_array = badge_downcase | split: ':' %}
+    {% if product_tags contains badge_text_array[0] and badge_text_array.size > 1 %}
+      <span class="product-badge {{ block.settings.badge_style | escape }}">
+        {{- badge_text_array[1] | escape -}}
+      </span>
+    {% endif %}
+  {% endfor %}
+</div>
