@@ -23,6 +23,12 @@
           "type": "title",
           "settings": {}
         },
+        "badge_r99Knj": {
+          "type": "badge",
+          "settings": {
+            "badge_mapping": "limited-edition:🌟 Limited Edition!,Bestseller:🛍️ Best Seller!"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -31,7 +37,10 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "circle",
+            "enable_size_chart": true,
+            "size_chart_label": "Find My Size",
+            "size_chart_mapping": "size"
           }
         },
         "quantity_selector": {
@@ -73,6 +82,7 @@
       "block_order": [
         "vendor",
         "title",
+        "badge_r99Knj",
         "price",
         "variant_picker",
         "quantity_selector",
