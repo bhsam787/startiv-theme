@@ -51,7 +51,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "all",
+        "collection": "startiv",
         "products_to_show": 8,
         "title": "Startiv AB Interview",
         "heading_size": "h2",
