@@ -196,6 +196,7 @@ product-info {
   display: flex;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
 }
 
 .product-form__input .size-chart svg {
