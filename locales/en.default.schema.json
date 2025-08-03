@@ -888,6 +888,10 @@
                 "label": "Pills"
               }
             },
+            "enable_size_chart": {
+              "label": "Enable size chart",
+              "info": "Size charts are managed in Metafields and Metaobjects."
+            },
             "swatch_shape": {
               "label": "Swatch",
               "info": "Learn more about [swatches](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-settings#options-with-swatches) on product options",
@@ -2203,6 +2207,27 @@
                 "label": "Truck"
               },
               "options__44": {
+                "label": "Washing"
+              }
+            }
+          }
+        },
+        "accordion": {
+          "name": "Accordion",
+          "settings": {
+            "heading": {
+              "label": "Heading",
+              "default": "Collapsible row"
+            },
+            "content": {
+              "label": "Content"
+            },
+            "icon": {
+              "label": "Icon",
+              "options__1": {
+                "label": "Box"
+              },
+              "options__2": {
                 "label": "Washing"
               }
             }
