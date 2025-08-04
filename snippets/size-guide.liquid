@@ -1,0 +1,100 @@
+{%- comment -%}
+  Product Size Guide Snippet Instructions
+
+  Parameters:
+      - product: {Object} The product object to which the size guide is associated.
+      - block: {Object} The block information for the size guide.
+
+  Example usage:
+      {% render 'size-guide', product: product, blocks: section.blocks %}
+{%- endcomment -%}
+
+{{ 'size-guide.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign size_chart_metaobject = product.metafields.custom.size_guide.value
+  assign sizeguide_json_data = size_chart_metaobject.json_data.value
+%}
+
+{% capture sizeguide_table_markup %}
+  <table>
+    {% for row in sizeguide_json_data %}
+      <tr>
+        {% for cell in row %}
+          {% if cell contains '/' %}
+            {% assign values = cell | split: '/' %}
+            <td>
+              <span class="c-cm-value">{{ values[0] }}</span>
+              <span class="c-in-value">{{ values[1] }}</span>
+            </td>
+          {% else %}
+            <td><span>{{ cell }}</span></td>
+          {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+{% endcapture %}
+
+{% for block in blocks %}
+  {% case block.type %}
+    {% when 'variant_picker' %}
+      {% if block.settings.enable_size_chart %}
+        <size-guide class="size__guide">
+          <div class="sizeguide-modal is-hidden" data-state="cm">
+            <div class="sizeguide-modal__inner">
+              <div class="sizeguide-modal__close">
+                <svg
+                  width="16"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="css-rm4v83"
+                  style="cursor: pointer;"
+                >
+                  <path d="M18.4853 1.51458L1.51472 18.4851M18.4853 18.4851L1.51472 1.51458" stroke="black" stroke-width="2px" class="css-18ii0kz"></path>
+                </svg>
+              </div>
+              <div class="sizeguide-modal__top-bar">{{ block.settings.size_chart_modal_title }}</div>
+
+              <div class="sizeguide-modal__content">
+                <div class="sizeguide-modal__content-part-left">
+                  <h2 class="sizeguide-modal__title">{{ size_chart_metaobject.title }}</h2>
+                  {{ size_chart_metaobject.content | metafield_tag }}
+                </div>
+                <div class="sizeguide-modal__content-part-right">
+                  <div class="sizeguide-modal__content-image">
+                    {% if size_chart_metaobject.image %}
+                      {{
+                        size_chart_metaobject.image
+                        | image_url: width: 500
+                        | image_tag:
+                          sizes: '(max-width: 480px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 60vw, 500px',
+                          widths: '100, 200, 300, 400, 500, 600',
+                          loading: 'lazy',
+                          alt: size_chart_metaobject.image.alt_text
+                      }}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+
+              <div class="sizeguide-modal__toggle-markup">
+                <div class="sizeguide-modal__toggle">
+                  <span class="sizeguide-modal__toggle-text --cm">
+                    {{- 'products.product.size-chart-size-1' | t | escape -}}
+                  </span>
+                  <span class="sizeguide-modal__toggle-text --in">
+                    {{- 'products.product.size-chart-size-2' | t | escape -}}
+                  </span>
+                </div>
+              </div>
+
+              <div class="sizeguide-modal__table-wrapper --desktop">
+                {{ sizeguide_table_markup }}
+              </div>
+            </div>
+          </div>
+        </size-guide>
+      {% endif %}
+  {% endcase %}
+{% endfor %}
