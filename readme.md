@@ -48,7 +48,7 @@ Matching is case-insensitive.
 
 ### Feature 3 and 4: Implement a Size Chart pop-up and Optimize images by using lazy loading techniques
 
-For size chart customization, I created some block settings under the existing variant-picker block, including settings for content customization. There is one input field called “Size Chart Mapping”—it is used to map the variant option name where I want to display the `“Find My Size”` button. There could be other variant options like color, weight, or size. If the input field contains the value `"size"`, then the “Find My Size” button will be displayed near that variant option.
+For size chart customization, I created some block settings under the existing variant-picker block, including settings for content customization. There is one input field called `“Size Chart Mapping”` —it is used to map the variant option name where I want to display the `“Find My Size”` button. There could be other variant options like color, weight, or size. If the input field contains the value `"size"`, then the “Find My Size” button will be displayed near that variant option.
 
 I also created a product-level metafield called `“Size Guide”`, which uses a metaobject as its value. I created a Size Guides metaobject where I can add multiple entries related to the size chart modal—for example: title, content, image, and JSON data.
 
