@@ -29,6 +29,9 @@ I created a product-level metafield called “Care Instructions”, with the typ
 
 I also placed the product description inside a collapsible row so that all the information appears in an accordion-style layout for a cleaner presentation.
 
+
+![Care Instructions](https://prnt.sc/S-zjEZaQGabQ)
+
 **Note:** I didn’t do any coding for this feature. The feature is already available in the theme in a nice way. Instead of creating the same redundant feature, I preferred to use the theme’s existing feature. In real-world Shopify development, I first investigate whether the feature is available in the theme or not, so I don’t need to create a redundant one.
 
 ---
