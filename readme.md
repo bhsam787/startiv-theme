@@ -30,7 +30,9 @@ I created a product-level metafield called “Care Instructions”, with the typ
 I also placed the product description inside a collapsible row so that all the information appears in an accordion-style layout for a cleaner presentation.
 
 
-![Care Instructions](https://cdn.shopify.com/s/files/1/0708/5080/6079/files/Screenshot_2.png?v=1754374332)
+![Care Instructions](https://cdn.shopify.com/s/files/1/0708/5080/6079/files/Screenshot_2.png?v=1754374467)
+![Care Instructions Metafiled](https://cdn.shopify.com/s/files/1/0708/5080/6079/files/Screenshot_5.png?v=1754374703)
+
 
 **Note:** I didn’t do any coding for this feature. The feature is already available in the theme in a nice way. Instead of creating the same redundant feature, I preferred to use the theme’s existing feature. In real-world Shopify development, I first investigate whether the feature is available in the theme or not, so I don’t need to create a redundant one.
 
@@ -47,6 +49,9 @@ Map product tags to custom badges. Enter each tag and badge label as `tag:label`
 Example: `limited-edition:🌟 Limited Edition!, bestseller:🛒 Best Seller!`  
 Matching is case-insensitive.
 
+![Badge](https://cdn.shopify.com/s/files/1/0708/5080/6079/files/Screenshot_3.png?v=1754374520)
+
+
 ---
 
 ### Feature 3 and 4: Implement a Size Chart pop-up and Optimize images by using lazy loading techniques
@@ -58,3 +63,7 @@ I also created a product-level metafield called `“Size Guide”`, which uses a
 I created a metaobject entry for `“Trixy Halfsleeve Shirt”` with relevant details, and under that product’s metafield, I assigned the metaobject by reference. Using this information, I displayed the size guide data in a modal popup.
 
 Images were optimized by applying `loading="lazy"` to defer off-screen image loading and using the srcset attribute to deliver appropriately sized images based on the device's viewport. This improves performance, especially on mobile and slower networks.
+
+![Size guide customizer](https://cdn.shopify.com/s/files/1/0708/5080/6079/files/Screenshot_4.png?v=1754374600)
+![Size guide Metafiled](https://cdn.shopify.com/s/files/1/0708/5080/6079/files/Screenshot_5.png?v=1754374703)
+![Size guide Metaobject](https://cdn.shopify.com/s/files/1/0708/5080/6079/files/Screenshot_6.png?v=1754374793)
