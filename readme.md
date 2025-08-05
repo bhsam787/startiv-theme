@@ -53,3 +53,5 @@ For size chart customization, I created some block settings under the existing v
 I also created a product-level metafield called “Size Guide”, which uses a metaobject as its value. I created a Size Guides metaobject where I can add multiple entries related to the size chart modal—for example: title, content, image, and JSON data.
 
 I created a metaobject entry for “Trixy Halfsleeve Shirt” with relevant details, and under that product’s metafield, I assigned the metaobject by reference. Using this information, I displayed the size guide data in a modal popup.
+
+Images were optimized by applying `loading="lazy` to defer off-screen image loading and using the srcset attribute to deliver appropriately sized images based on the device's viewport. This improves performance, especially on mobile and slower networks.
