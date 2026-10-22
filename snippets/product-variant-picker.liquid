@@ -44,7 +44,19 @@
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label">{{ option.name }}</legend>
+          {% liquid
+            assign size_chart_mapping = block.settings.size_chart_mapping | downcase
+            assign option_name = option.name | downcase
+          %}
+          <legend class="form__label {% if block.settings.enable_size_chart and size_chart_mapping == option_name %}size-chart{% endif %}">
+            <span>{{ option.name }}</span>
+            {% if block.settings.enable_size_chart and size_chart_mapping == option_name %}
+              <span class="size-chart">
+                {{ 'icon-size-guide.svg' | inline_asset_content }}
+                <span>{{- block.settings.size_chart_label | escape -}}</span>
+              </span>
+            {% endif %}
+          </legend>
           {% render 'product-variant-options',
             product: product,
             option: option,
